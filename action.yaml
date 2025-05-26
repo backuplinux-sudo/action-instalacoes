@@ -1,0 +1,17 @@
+name: Instalação dos softwares
+author: Nome do setor
+description: Instalação dos softwares requeridos por segurança da informação
+
+# inputs:
+# outputs:
+
+runs:
+  using: composite
+  steps:
+    - #if: ${{ runner.os == "Linux" }}
+      run: |
+        apt update
+        apt install -y \
+        curl \
+        net-tools \
+        openssl
