@@ -11,8 +11,7 @@ runs:
     - shell: bash
       run: |
         if [[ "${{ runner.os }}" == "Windows" ]]; then
-          echo "Instalação de softwares não é suportada no Windows."
-          exit 0
+          echo "Passos para instação de softwares no Windows."
         fi
         if [[ "${{ runner.os }}" == "Linux" ]]; then
           sudo apt update
