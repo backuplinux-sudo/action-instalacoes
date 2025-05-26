@@ -10,11 +10,13 @@ runs:
   steps:
     - shell: bash
       run: |
-        if ${{ runner.os }} == "Windows"; then
+        echo "${{ runner.os }}"
+
+        if ${{ runner.os == "Windows" }}; then
           echo "Instalação de softwares não é suportada no Windows."
           exit 0
         fi
-        if ${{ runner.os }} == "Linux"; then
+        if ${{ runner.os == "Linux" }}; then
           sudo apt update
           sudo apt install -y \
           curl \
