@@ -8,7 +8,7 @@ description: Instalação dos softwares requeridos por segurança da informaçã
 runs:
   using: composite
   steps:
-    - #if: ${{ runner.os == "Linux" }}
+    - if: ${{ runner.os == "Windows" }}
       shell: bash
       run: |
         sudo apt update
