@@ -8,11 +8,16 @@ description: Instalação dos softwares requeridos por segurança da informaçã
 runs:
   using: composite
   steps:
-    - if: ${{ runner.os == "Windows" }}
-      shell: bash
+    - shell: bash
       run: |
-        sudo apt update
-        sudo apt install -y \
-        curl \
-        net-tools \
-        openssl
+        if ${{ runner.os == "Windows" }}; then
+          echo "Instalação de softwares não é suportada no Windows."
+          exit 0
+        fi
+        if ${{ runner.os == "Linux" }}; then
+          sudo apt update
+          sudo apt install -y \
+          curl \
+          net-tools \
+          openssl
+        fi
